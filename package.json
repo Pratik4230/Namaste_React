@@ -1,0 +1,21 @@
+{
+  "name": "namaste_react",
+  "version": "1.0.0",
+  "description": "Learning React",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/Pratik4230/Namaste_React.git)"
+  },
+  "keywords": [
+    "LearnReact"
+  ],
+  "author": "Pratik Jadhav",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.11.0"
+  }
+}
