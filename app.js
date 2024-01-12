@@ -1859,17 +1859,17 @@ const resList =   [
 
 const RestaurantCard = (props) => {
     const {resData} = props;
-    console.log(props);
+   const {name , cuisines , avgRating , areaName , cloudinaryImageId} = resData?.info;
     return (
         
         <div className='Card'>
-            <div> <img className='foodImage' src={'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/'+resData.info.cloudinaryImageId}></img></div>
-            <h1>{resData.info.name}</h1>
-            <h4>{resData.info.cuisines.join()}</h4>
+            <div> <img className='foodImage' src={'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/'+cloudinaryImageId}></img></div>
+            <h1>{name}</h1>
+            <h4>{cuisines.join()}</h4>
             <div className='otherInfo'>
-                <span>{resData.info.avgRating}</span>
+                <span>{avgRating}</span>
                 <span>{resData.info.sla.deliveryTime + "Mins"}</span>
-                <span>{resData.info.areaName}</span>
+                <span>{areaName}</span>
             </div>
         </div>
     )
@@ -1877,19 +1877,17 @@ const RestaurantCard = (props) => {
 
 const Body = () => {
     return (
-        <body className='body'>
+        <main className='body'>
             <div>search</div>
 
       <section className='RestaurantContainer'>
       
-      <RestaurantCard resData = {resList[0]} />
-      <RestaurantCard resData = {resList[1]} />
-      <RestaurantCard resData = {resList[2]} />
-      
-    
+     {resList.map( (re) => (
+      <RestaurantCard key ={re.info.id} resData={re} />
+     ) )} 
       </section>
 
-        </body>
+        </main>
     )
 }
 
