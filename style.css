@@ -79,3 +79,7 @@ align-items: center;
     font-size: large;
     margin: 0.3rem
 }
+
+.btn{
+    margin: 10px;
+}
