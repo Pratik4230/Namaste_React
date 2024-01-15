@@ -14,10 +14,7 @@ const Shimmer = () => {
             <div className="fakeCard" ></div>
             <div className="fakeCard" ></div>
             <div className="fakeCard" ></div>
-            <div className="fakeCard" ></div>
-            <div className="fakeCard" ></div>
-            <div className="fakeCard" ></div>
-            <div className="fakeCard" ></div>
+            
         </div>
 
     )
