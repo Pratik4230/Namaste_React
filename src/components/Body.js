@@ -17,7 +17,7 @@ useEffect( () => {
 } , [] );
 
  const fetchData = async () => {
-  const data = await fetch(  "https://www.swiggy.com/mapi/homepage/getCards?lat=19.0759837&lng=72.8776559" );
+  const data = await fetch(  "https://www.swiggy.com/mapi/homepage/getCards?lat=18.5204303&lng=73.8567437" );
   const gotData = await data.json();
     
   setGotList(gotData?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
@@ -31,7 +31,7 @@ useEffect( () => {
         <main className='body'>
             <div> 
                 <button className="btn" onClick={ () => {
-                    let updated = gotList.filter( (res) => res.info.sla.deliveryTime < 25 );
+                    let updated = gotList.filter( (res) => res.info.sla.deliveryTime < 30 );
                  setFilterdList(updated);
                  console.log(updated);
                 } } >Less deliveryTime</button>
