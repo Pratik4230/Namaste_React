@@ -2,7 +2,7 @@ import { useState  , useEffect} from "react";
 
 const ResMenu = () => {
 
-const [resinfo , setResInfo] = useState(null);
+const [resInfo , setResInfo] = useState(null);
 
 useEffect( () => {
   fetchData();
@@ -10,9 +10,9 @@ useEffect( () => {
 
 const fetchData = async () => {
    const resCard = await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=18.5204303&lng=73.8567437");
-   const resInfo = await resCard.json();
-   setResInfo(resInfo);
-   console.log(resInfo)
+   const restData = await resCard.json();
+   setResInfo(restData);
+   console.log(restData);
 }
 
 
