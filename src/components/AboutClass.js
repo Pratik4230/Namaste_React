@@ -8,8 +8,24 @@ constructor(props){
         count : 0,
         count2 : 2
     };
+    // console.log( this.props.name + " child constructor")
+
+}
+componentDidMount(){
+    // console.log( this.props.name + "child compo did mount ")
+}
+componentDidUpdate(prevState, prevProps){
+ if( this.state.count !== prevState.count ){
+    console.log("compo did  update")
+ }
+
+ this.componentWillUnmount(
+    clearInterval()
+    //clear mess here
+ )
 }
     render(){
+        // console.log(  this.props.name + "child render")
        
     const {name , location} = this.props;
     const {count , count2} = this.state;

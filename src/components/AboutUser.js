@@ -1,6 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const AboutUser = (props) => {
+
+useEffect( () => {
+   
+      console.log("useEffect")
+   
+      return () => {
+        console.log("clear mess")
+      }
+} , [] )
 
 const [count, setCount] = useState(0);
 const [count2, setCount2] = useState(2);
