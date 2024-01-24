@@ -14,15 +14,17 @@ const [searchText , setSearchText] = useState("");
 useEffect( () => {
     fetchData();
     console.log("got it")
-} , [] );                 //https://www.swiggy.com/mapi/homepage/getCards?lat=18.5204303&lng=73.8567437
+} , [] );            
+     //
+
 
  const fetchData = async () => {
   const data = await fetch(  "https://www.swiggy.com/mapi/homepage/getCards?lat=18.5204303&lng=73.8567437" );
   const gotData = await data.json();
     
-  setGotList(gotData?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
-  setFilterdList(gotData?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
-  console.log(gotData);
+  setGotList(gotData?.data?.success.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
+  setFilterdList(gotData?.data?.success.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);  //
+  
   }
 
 
