@@ -1,13 +1,17 @@
 import { useState  , useEffect} from "react";
 import Shimmer from "./Shimmer";
-
+import {useParams} from "react-router-dom";
 const ResMenu = () => {
 
 const [resInfo , setResInfo] = useState(null);
 
+const {resId} = useParams();
+
 useEffect( () => {
   fetchData();
 }, [] )
+
+
 
 const fetchData = async () => {
    const resCard = await fetch("https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5204303&lng=73.8567437&restaurantId=21001&isMenuUx4=true&submitAction=ENTER");
@@ -33,8 +37,10 @@ return (
 
 <h2> menu </h2>
         <ul>
+          
                 {itemCards.map((d) => {  
-                  <li key={d.card.info.id}> 
+                  <li key={d.card.info.id}>
+                   
                   {d.card.info.name}
                    </li>
                     })}   
