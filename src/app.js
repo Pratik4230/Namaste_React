@@ -44,7 +44,7 @@ const appRouter = createBrowserRouter([
         element : <ResMenu/>
       }
     ],
-    errorElement : <Error/>
+   errorElement : <Error/>
   }  
   ])
   

@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from 'react';
 import Shimmer from './Shimmer'
+import { Link } from "react-router-dom";
 
 const Body = () => {
 
@@ -55,7 +56,7 @@ setFilterdList(neww);
 
       <section className='RestaurantContainer'>
 {filterdList.map( (re) => (
-      <RestaurantCard key ={re.info.id} resData={re} />
+    <Link key ={re.info.id} >  <RestaurantCard  resData={re} /> </Link>
      ) )} 
       </section>
         </main>
