@@ -17,7 +17,7 @@ useEffect( () => {
     fetchData();
     console.log("got it")
 } , [] );            
-     //
+    
 
 
  const fetchData = async () => {

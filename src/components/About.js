@@ -4,7 +4,7 @@ import AboutClass from "./AboutClass.js";
 import AboutUser from "./AboutUser.js";
 
 class About extends Component{
-    constructor (props) {
+    constructor (props) { 
         super(props);
 // console.log("parent constructor")
     }
