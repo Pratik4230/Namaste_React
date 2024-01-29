@@ -10,22 +10,22 @@ const Header = () => {
     const onlineStatus = useOnlineStatus();
 const [logInBtn , setLogInBtn] = useState("LogIn")
     return (
-        <header className='header'>
-            <div id='logo-container'> <img id='logo' src={LOGO_URL}></img> </div>
-            {/* ⚠️❎ */}
-            <ul className='ul'>
+        <header className='flex justify-between align-middle'>
+            <div > <img  className =' h-24' src={LOGO_URL}></img> </div>
+           
+            <ul className='flex mt-3 p-4 '  >
 
-            <li>  Online Status : { onlineStatus ?  "✅" : "🛑" } </li>
+            <li className='m-3'>  Online Status : { onlineStatus ?  "✅" : "🛑" } </li>
                 
-                <li> 
+                <li className='m-3' > 
                 <Link to='/' >Home</Link> </li>
-                <li>
+                <li className='m-3' >
                     <Link to='/about' >About</Link> </li>
-                <li>
+                <li className='m-3' >
                 <Link to='/contact' >ContactUs</Link> </li>
-                <li id='cart'> <img id='cart-img' src={CART_URL} ></img> </li>
+                <li className='m-3 -mt-2'> <img className ='h-14' src={CART_URL} ></img> </li>
 
-              <button className="log" 
+              <button className="-mt-2" 
                  onClick= { () => {
                     logInBtn === "LogIn" ? setLogInBtn("LogOut") : setLogInBtn("LogIn")
                   } }

@@ -28,12 +28,12 @@ return (
 <h2> menu </h2>
         <ul>
           
-                {itemCards.map((d) => {  
+                {itemCards.map((d) => ( 
                   <li key={d.card.info.id}>
                    
                   {d.card.info.name}
                    </li>
-                    })}   
+                    ))}   
         </ul>
         </>
     )

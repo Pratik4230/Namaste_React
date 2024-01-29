@@ -37,8 +37,8 @@ useEffect( () => {
 
     return gotList.length === 0 ?  <Shimmer /> : 
     (
-        <main className='body'>
-            <div> 
+        <main className='  m-1 p-1'>
+            <div > 
                 <button className="btn" onClick={ () => {
                     let updated = gotList.filter( (res) => res.info.sla.deliveryTime < 30 );
                  setFilterdList(updated);
@@ -60,7 +60,7 @@ setFilterdList(neww);
 
             </div>
 
-      <section className='RestaurantContainer'>
+      <section className='flex flex-wrap'>
 {filterdList.map( (re) => (
     <Link key ={re.info.id} >  <RestaurantCard  resData={re} /> </Link>
      ) )} 
