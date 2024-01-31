@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard , {withPromotedLable} from "./RestaurantCard";
 import { useEffect, useState } from 'react';
 import Shimmer from './Shimmer'
 import { Link } from "react-router-dom";
@@ -13,9 +13,12 @@ const [filterdList , setFilterdList] = useState([]);
 
 const [searchText , setSearchText] = useState("");
 
+const RestaurantCardPromoted = withPromotedLable(RestaurantCard);
+
 useEffect( () => {
     fetchData();
     console.log("got it")
+    console.log(gotList)
 } , [] );            
     
 
@@ -62,7 +65,18 @@ setFilterdList(neww);
 
       <section className='flex flex-wrap'>
 {filterdList.map( (re) => (
-    <Link key ={re.info.id} >  <RestaurantCard  resData={re} /> </Link>
+    <Link
+     key ={re.info.id}
+      to={"/restaurants/" + re.info.id}
+      > 
+
+      {re.info.promoted ? (
+         <RestaurantCardPromoted resData={re} />
+          ) : (
+             <RestaurantCard  resData={re}/>
+              ) }
+       
+       </Link>
      ) )} 
       </section>
         </main>

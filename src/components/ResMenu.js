@@ -14,10 +14,11 @@ const resInfo = useResMenu(resId);
 if (resInfo == null) {
     return <Shimmer/>
 }
-
+console.log(resInfo)
 const {name , areaName , avgRatingString , costForTwo} = resInfo?.cards[2]?.card?.card?.info;
 const {itemCards} = resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
-console.log(itemCards);  
+const categories = resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+console.log(itemCards  , "buovy");  
 return (
         <>
         <h1>{name}</h1>
@@ -25,16 +26,6 @@ return (
         <p> {avgRatingString} </p>
         <p> {costForTwo / 100} </p>
 
-<h2> menu </h2>
-        <ul>
-          
-                {itemCards.map((d) => ( 
-                  <li key={d.card.info.id}>
-                   
-                  {d.card.info.name}
-                   </li>
-                    ))}   
-        </ul>
         </>
     )
 }

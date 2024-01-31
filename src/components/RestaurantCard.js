@@ -3,6 +3,7 @@ import { IMG_URL } from "../utils/constants";
 const RestaurantCard = (props) => {
     const {resData} = props;
    const {name , cuisines , avgRating , areaName , cloudinaryImageId} = resData?.info;
+
     return (
         
         <div className=' pl-7 pt-3 bg-slate-400 m-2 hover:bg-gray-50 shadow-neutral-800 shadow-lg h-[450px] w-[18.5vw] rounded-xl '>
@@ -15,7 +16,18 @@ const RestaurantCard = (props) => {
                 <span className="m-1" >{areaName}</span>
             </div>
         </div>
-    )  //
+    ) 
 }
+
+ export const withPromotedLable = (RestaurantCard) => {
+    return (props) => {
+        return (
+            <div>
+                <label>Promoted</label>
+                <RestaurantCard {...props} />
+            </div>
+        );
+        };
+ };
 
 export default RestaurantCard;
