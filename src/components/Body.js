@@ -38,8 +38,7 @@ useEffect( () => {
     return <h1>check  your internet connection</h1>
   }
 
-    return gotList.length === 0 ?  <Shimmer /> : 
-    (
+return (
         <main className='  m-1 p-1'>
             <div > 
                 <button className="btn" onClick={ () => {
